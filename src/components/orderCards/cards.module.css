@@ -1,0 +1,34 @@
+.container{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #95989A;
+}
+
+.date{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-left: 10px;   
+}
+
+.text1{
+    font: normal normal normal 16px/22px Open Sans;
+}
+
+.text2{
+    font: normal normal normal 14px/19px Open Sans;
+}
+
+.titleEmail{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-left: 65px;
+}
+
+.type{
+    width: fit-content;
+    margin-left: 290px;
+}

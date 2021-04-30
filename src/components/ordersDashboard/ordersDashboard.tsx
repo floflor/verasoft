@@ -3,7 +3,7 @@ import Styles from './ordersDashboard.module.css';
 import {useSelector, useDispatch} from 'react-redux';
 import { State } from '../../reducers/index';
 import { changeSentOrErrorsBtn } from '../../actions';
-
+import {OrderCards} from '../orderCards/orderCards';
 
 export const OrdersDashboard = () => {
     const dispatch = useDispatch();
@@ -27,7 +27,7 @@ export const OrdersDashboard = () => {
                     <span className={Styles.communicationType}>COMMUNICATION TYPE</span>
                     <span className={Styles.orderId}>ORDER #</span>
                 </div>
-
+            <OrderCards/>
             </div>
         </div>
     )
