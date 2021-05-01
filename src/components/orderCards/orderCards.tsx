@@ -2,14 +2,7 @@ import * as React from 'react';
 import { State } from '../../reducers/index';
 import { useSelector } from 'react-redux';
 import { Card } from './cards';
-import CSS from 'csstype';
 
-const divStyles : CSS.Properties = {
-    width:'100%',
-    display:'flex',
-    flexDirection:'column',
-    justifyContent:'center'
-}
 
 export const OrderCards = () => {
 
@@ -20,7 +13,7 @@ export const OrderCards = () => {
     const displayOrders = (type: string) => {
         if (type === 'ordersAAA') {
             return (
-                orders.orders_AAA?.sent?.map(c => 
+                orders.orders_AAA?.sent?.map(c =>
                     <Card
                         date={c.sent_dt}
                         time={c.sent_tm}
@@ -34,8 +27,8 @@ export const OrderCards = () => {
     }
 
     return (
-        <div style={divStyles}>
-         {displayOrders(btnActive)}
-        </div>
+        <>
+            {displayOrders(btnActive)}
+        </>
     )
 }
