@@ -7,8 +7,12 @@
 }
 .row td{
     border-bottom: 1px solid #95989A;
-    margin:0;
-    position: relative;
+}
+
+.row p{
+    overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
 }
 
 .text1{
@@ -34,7 +38,10 @@
     font: normal normal normal 12px/14px Arial;
     letter-spacing: 0px;
     color: #FFFFFF;
-    position:relative;
-    left: 60px;
+    margin-left: 10px;
     
+}
+
+.btnCont{
+    width:150px;
 }

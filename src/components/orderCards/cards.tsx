@@ -41,7 +41,7 @@ export const Card = ({ date, time, subject, type, id }: AppProps) => {
             <td>
                 <p className={Styles.text2}>{id}</p>
             </td>
-            <td>
+            <td className={Styles.btnCont}>
                 <button>RESEND</button>
             </td>
         </tr>

@@ -26,7 +26,12 @@ export const Dashboard = () => {
         return age;
     }
     
-    
+    // date
+    const wordDate = new Date(userData.carrier_status.since)
+    const year: string = wordDate.toString().slice(11,15)
+    const rest: string = wordDate.toString().slice(4, 10);
+    const fullDate: string = `SINCE ${rest.toUpperCase()}, ${year}`
+
 
     return (
         <div className={Styles.container}>
@@ -34,7 +39,7 @@ export const Dashboard = () => {
                 <div className={Styles.imgContainer}>
                     <img src={user} alt="User Icon" />
                 </div>
-                <span>{`${userData.gender?.toUpperCase()} - ${getAge(userData.birth_date)}`}</span>
+                <span>{userData.gender? `${userData.gender?.toUpperCase()} - ${getAge(userData.birth_date)}`: ''}</span>
             </div>
             <div className={Styles.userInfo}>
                 <div>
@@ -78,7 +83,7 @@ export const Dashboard = () => {
             <div className={Styles.status}>
                 <p className={Styles.title}>SMS CARRIER STATUS</p>
                 <span>{userData.carrier_status?.status}</span>
-                <p className={Styles.since}>SINCE algo</p>
+                <p className={Styles.since}>{fullDate}</p>
             </div>
         </div>
     )

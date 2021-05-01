@@ -54,7 +54,15 @@
 .table{
     width:100%;
     border-spacing: 0;
+    table-layout: fixed;
 }
+table tr th:nth-child(2){
+    width: 45%;
+  }
+  table tr th:nth-child(3){
+    width: 30%;
+  }
+  
 .row{
     height: 25px;
 }

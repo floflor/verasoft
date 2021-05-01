@@ -16,8 +16,8 @@ export type initialState = {
       email?: number,
       orders?: number
     },
-    carrier_status?: {
-      since?: string,
+    carrier_status: {
+      since: string,
       status?: string
     }
   },
@@ -26,7 +26,11 @@ export type initialState = {
 
 export const getInfoReducer = (
   state: initialState = {
-    info: {},
+    info: {
+      carrier_status:{
+        since: ''
+      }
+    },
     error: {}
   },
   action: BaseAction

@@ -11,7 +11,7 @@ export const Header = () => {
         <div className={Styles.container}>
             <div className={Styles.user}>
                 <img src={Star} alt="Star icon"/>
-                <span>{`${userData.first_name} ${userData.last_name}`}</span>
+                <span>{userData.first_name ? `${userData.first_name} ${userData.last_name}`: ''}</span>
             </div>
             <button className={Styles.btn}>New Order</button>
         </div>
