@@ -4,8 +4,8 @@ export type orderState = {
   info: {
     orders_A?: [],
     orders_AA?: [],
-    orders_AAA?: {
-      sent?: [
+    orders_AAA: {
+      sent: [
         {
           id?: number,
           order_id?: number,
@@ -28,7 +28,11 @@ export type orderState = {
 
 export const getOrdersReducer = (
   state: orderState = {
-    info: {},
+    info: {
+      orders_AAA:{
+        sent:[{}]
+      }
+    },
     error: {}
   },
   action: BaseAction

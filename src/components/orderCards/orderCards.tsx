@@ -2,6 +2,7 @@ import * as React from 'react';
 import { State } from '../../reducers/index';
 import { useSelector } from 'react-redux';
 import { Card } from './cards';
+import Styles from './orderCards.module.css';
 
 
 export const OrderCards = () => {
@@ -11,7 +12,7 @@ export const OrderCards = () => {
 
 
     const displayOrders = (type: string) => {
-        if (type === 'ordersAAA') {
+        if (type === 'ordersAAA' && orders.orders_AAA?.sent?.length > 0) {
             return (
                 orders.orders_AAA?.sent?.map(c =>
                     <Card
@@ -22,6 +23,21 @@ export const OrderCards = () => {
                         id={c.order_id}
                     />
                 )
+            )
+        }
+
+        else if (type === 'ordersAA' || type === 'ordersA' || type === 'ordersB' || type === 'ordersC') {
+            return (
+                <div className={Styles.container}>
+                    <span className={Styles.message}>No items</span>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div className={Styles.container}>
+                    <span className={Styles.message}>No items</span>
+                </div>
             )
         }
     }
