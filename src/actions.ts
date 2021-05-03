@@ -39,3 +39,8 @@ export const getOrdersFailedAction = (response: object) : BaseAction =>({
   type: actionIds.GET_ORDERS_FAILED,
   payload: response
 })
+
+export const showModal = (condition: boolean) : BaseAction =>({
+  type: actionIds.SHOW_MODAL,
+  payload: condition
+})

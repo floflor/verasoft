@@ -15,6 +15,8 @@ export const actionIds = {
     '[1] Server returned orders info.',
   GET_ORDERS_FAILED:
     '[2] Request user info to the server.',
+  SHOW_MODAL:
+    '[0] Show new order modal.',
 
 };
 export interface BaseAction {
