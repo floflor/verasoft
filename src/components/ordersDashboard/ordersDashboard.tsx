@@ -12,13 +12,13 @@ export const OrdersDashboard = () => {
     const ordersActive = useSelector((state: State) => state.btnOrder.orderToggle);
 
     const [show, setShow] = React.useState(true)
-    
-    const [sort , setSort] = React.useState('asc')
+
+    const [sort, setSort] = React.useState('asc')
     const [type, setType] = React.useState('')
 
-    const handleSortClick = (e : any) =>{
-        e.preventDefault(); 
-        if (sort === 'asc'){
+    const handleSortClick = (e: any) => {
+        e.preventDefault();
+        if (sort === 'asc') {
             setSort('desc');
             setType(e.target.name);
         }
@@ -28,14 +28,14 @@ export const OrdersDashboard = () => {
         }
     }
 
-  
+
 
     const handleClick = (btn: string, e: React.MouseEvent) => {
         e.preventDefault();
         dispatch(getOrdersStartAction());
         dispatch(changeSentOrErrorsBtn(btn));
         if (btn === 'errors') {
-            const timer = setTimeout(() => {
+            setTimeout(() => {
                 setShow(false);
             }, 2000);
 
@@ -53,14 +53,16 @@ export const OrdersDashboard = () => {
             </div>
             {sentOrErrors === 'sent' && ordersActive === 'ordersAAA' &&
                 <table className={Styles.table}>
-                    <tr className={Styles.row}>
-                        <th><button name='date' onClick={(e)=>handleSortClick(e)}>DATE & TIME</button></th>
-                        <th><button name='subject' onClick={(e) => handleSortClick(e)}>SUBJECT</button></th>
-                        <th><button name='communication' onClick={(e)=> handleSortClick(e)}>COMMUNICATION TYPE</button></th>
-                        <th><button name='orderId' onClick={(e)=> handleSortClick(e)}>ORDER #</button></th>
-                        <th></th>
-                    </tr>
-                    <OrderCards sort={sort} type={type}/>
+                    <tbody>
+                        <tr className={Styles.row}>
+                            <th><button name='date' onClick={(e) => handleSortClick(e)}>DATE & TIME</button></th>
+                            <th><button name='subject' onClick={(e) => handleSortClick(e)}>SUBJECT</button></th>
+                            <th><button name='communication' onClick={(e) => handleSortClick(e)}>COMMUNICATION TYPE</button></th>
+                            <th><button name='orderId' onClick={(e) => handleSortClick(e)}>ORDER #</button></th>
+                            <th></th>
+                        </tr>
+                        <OrderCards sort={sort} type={type} />
+                    </tbody>
                 </table>
             }
             {
@@ -72,7 +74,7 @@ export const OrdersDashboard = () => {
                     <span className={Styles.message}>No items</span>
                 </div>}
             {ordersActive !== 'ordersAAA' && sentOrErrors === 'sent' &&
-            <OrderCards sort={sort} type={type} />}
+                <OrderCards sort={sort} type={type} />}
         </div>
 
     )

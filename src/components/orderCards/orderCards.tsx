@@ -86,6 +86,7 @@ export const OrderCards = ({ sort, type }: AppProps) => {
             return (
                 orders.orders_AAA?.sent?.map(c =>
                     <Card
+                        key={c.id}
                         date={c.sent_dt}
                         time={c.sent_tm}
                         subject={c.subject}
@@ -99,6 +100,7 @@ export const OrderCards = ({ sort, type }: AppProps) => {
             return (
                 sorted.map(c =>
                     <Card
+                        key={c.id}
                         date={c.sent_dt}
                         time={c.sent_tm}
                         subject={c.subject}

@@ -26,7 +26,7 @@ export const Card = ({ date, time, subject, type, id }: AppProps) => {
 
 
     return (
-        <tr className={Styles.row}>
+        <tr  className={Styles.row}>
             <td>
                 <p className={Styles.text1}>{fullDate}</p>
                 <p className={Styles.text2}>{correctTime}</p>
