@@ -75,6 +75,17 @@ table tr th:nth-child(2){
     
 }
 
+th button{
+    text-align: left;
+    font: normal normal normal 10px/11px Arial;
+    letter-spacing: 0px;
+    color: #444444;
+    border-bottom: 1px solid #D8D8D8;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
 .errorsContainer{
     width: 100%;
     display: flex;

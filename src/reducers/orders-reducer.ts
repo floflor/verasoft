@@ -7,15 +7,15 @@ export type orderState = {
     orders_AAA: {
       sent: [
         {
-          id?: number,
-          order_id?: number,
-          sent_dt?: string,
-          sent_tm?: string,
-          subject?: {
-            title?: string,
-            email?: string,
+          id: number,
+          order_id: number,
+          sent_dt: string,
+          sent_tm: string,
+          subject: {
+            title: string,
+            email: string,
           },
-          type?: string
+          type: string
         },
       ]
     },
@@ -30,7 +30,17 @@ export const getOrdersReducer = (
   state: orderState = {
     info: {
       orders_AAA:{
-        sent:[{}]
+        sent:[{
+          id: 0,
+          order_id: 0,
+          sent_dt: '',
+          sent_tm: '',
+          subject: {
+            title: '',
+            email: '',
+          },
+          type: ''
+        },]
       }
     },
     error: {}

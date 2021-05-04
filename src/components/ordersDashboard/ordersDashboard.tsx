@@ -13,6 +13,22 @@ export const OrdersDashboard = () => {
 
     const [show, setShow] = React.useState(true)
     
+    const [sort , setSort] = React.useState('asc')
+    const [type, setType] = React.useState('')
+
+    const handleSortClick = (e : any) =>{
+        e.preventDefault(); 
+        if (sort === 'asc'){
+            setSort('desc');
+            setType(e.target.name);
+        }
+        else {
+            setSort('asc');
+            setType(e.target.name);
+        }
+    }
+
+  
 
     const handleClick = (btn: string, e: React.MouseEvent) => {
         e.preventDefault();
@@ -38,13 +54,13 @@ export const OrdersDashboard = () => {
             {sentOrErrors === 'sent' && ordersActive === 'ordersAAA' &&
                 <table className={Styles.table}>
                     <tr className={Styles.row}>
-                        <th>DATA & TIME</th>
-                        <th>SUBJECT</th>
-                        <th>COMMUNICATION TYPE</th>
-                        <th>ORDER #</th>
+                        <th><button name='date' onClick={(e)=>handleSortClick(e)}>DATE & TIME</button></th>
+                        <th><button name='subject' onClick={(e) => handleSortClick(e)}>SUBJECT</button></th>
+                        <th><button name='communication' onClick={(e)=> handleSortClick(e)}>COMMUNICATION TYPE</button></th>
+                        <th><button name='orderId' onClick={(e)=> handleSortClick(e)}>ORDER #</button></th>
                         <th></th>
                     </tr>
-                    <OrderCards />
+                    <OrderCards sort={sort} type={type}/>
                 </table>
             }
             {
@@ -56,7 +72,7 @@ export const OrdersDashboard = () => {
                     <span className={Styles.message}>No items</span>
                 </div>}
             {ordersActive !== 'ordersAAA' && sentOrErrors === 'sent' &&
-            <OrderCards/>}
+            <OrderCards sort={sort} type={type} />}
         </div>
 
     )
